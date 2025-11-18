@@ -1,116 +1,285 @@
-# 🍔 Python Burguer's - Sistema de Gestão de Restaurante
+# ☕ RestauranteJAVA (Fictício)
 
-Sistema web completo para gestão de restaurante desenvolvido com Spring Boot, MySQL e Thymeleaf.
+![Java](https://img.shields.io/badge/Java-17+-orange.svg)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.x-green.svg)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-purple.svg)
+![MySQL](https://img.shields.io/badge/MySQL-8.0+-blue.svg)
 
-## 📋 Funcionalidades
+Sistema completo de gerenciamento de restaurante desenvolvido com **Spring Boot** e **Thymeleaf**, oferecendo uma experiência moderna e intuitiva para cadastro de pratos, clientes, pedidos e contato.
 
-- ✅ Cadastro e listagem de cardápio
-- ✅ Cadastro de clientes
-- ✅ Sistema de encomendas
-- ✅ Formulário de contato
-- ✅ Páginas informativas (Sobre, Contato)
-- ✅ Interface responsiva com Bootstrap 5
+## 📋 Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Configuração do Banco de Dados](#configuração-do-banco-de-dados)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Screenshots](#screenshots)
+- [API Endpoints](#api-endpoints)
+- [Contribuindo](#contribuindo)
+- [Licença](#licença)
+- [Contato](#contato)
+
+## 🎯 Sobre o Projeto
+
+**RestauranteJAVA** é uma aplicação web completa para gerenciamento de restaurantes, que combina a robustez do Spring Boot com um design moderno e responsivo. O sistema permite gerenciar cardápios, clientes, pedidos e mensagens de contato de forma integrada e eficiente.
+
+### ✨ Destaques
+
+- 🎨 Interface moderna com design system consistente
+- 📱 Totalmente responsivo (mobile-first)
+- ⚡ Performance otimizada
+- 🔒 Validações de formulário
+- 🗄️ Banco de dados relacional com MySQL
+- 📊 Dashboard com estatísticas de pedidos
+
+## 🚀 Funcionalidades
+
+### 📖 Cardápio
+- ✅ Cadastro de pratos com nome, composição e preço
+- ✅ Listagem visual de todos os pratos
+- ✅ Formatação automática de valores monetários
+- ✅ Cards animados e responsivos
+
+### 👥 Clientes
+- ✅ Cadastro de clientes com nome, e-mail e telefone
+- ✅ Validação de e-mails únicos
+- ✅ Interface amigável para registro
+
+### 🛒 Pedidos (Encomendas)
+- ✅ Criação de pedidos vinculados a clientes e pratos
+- ✅ Controle de quantidade
+- ✅ Campo de observações personalizadas
+- ✅ Sistema de status (Pendente, Em Preparo, Pronto, Entregue)
+- ✅ Cálculo automático de valores totais
+- ✅ Histórico completo de pedidos
+- ✅ Dashboard com estatísticas
+
+### 📧 Contato
+- ✅ Formulário de contato completo
+- ✅ Categorização por assunto
+- ✅ Registro de mensagens no banco de dados
+- ✅ Página de confirmação de envio
+
+### 📄 Páginas Institucionais
+- ✅ Página inicial (Home)
+- ✅ Sobre nós
+- ✅ Contato
+- ✅ Páginas de sucesso personalizadas
+- ✅ Página de erro customizada
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Backend:** Spring Boot 3.5.6
-- **Frontend:** Thymeleaf, Bootstrap 5.3.3
-- **Banco de Dados:** MySQL 8.0
-- **Build Tool:** Maven
-- **Java:** 21
+### Backend
+- **Java 17+**
+- **Spring Boot 3.x**
+  - Spring Web
+  - Spring Data JPA
+  - Spring DevTools
+- **Thymeleaf** - Template Engine
+- **MySQL 8.0+** - Banco de Dados
+- **Maven** - Gerenciamento de dependências
+
+### Frontend
+- **HTML5**
+- **CSS3** (Custom Variables)
+- **Bootstrap 5.3.3**
+- **Font Awesome 6.4.0**
+- **JavaScript (Vanilla)**
+
+### Ferramentas
+- **phpMyAdmin** - Administração do banco
+- **Git** - Controle de versão
+- **IntelliJ IDEA / Eclipse** - IDE
 
 ## 📦 Pré-requisitos
 
 Antes de começar, certifique-se de ter instalado:
 
-- JDK 21 ou superior
-- MySQL 8.0 ou superior
-- Maven 3.6 ou superior
+- ☕ **Java JDK 17+** - [Download](https://www.oracle.com/java/technologies/downloads/)
+- 🗄️ **MySQL 8.0+** - [Download](https://dev.mysql.com/downloads/)
+- 📦 **Maven 3.6+** - [Download](https://maven.apache.org/download.cgi)
+- 🔧 **Git** - [Download](https://git-scm.com/)
 
-## 🚀 Instalação e Configuração
+## ⚙️ Instalação
 
-### 1. Clone o repositório (se aplicável)
-```bash
-git clone https://github.com/ClaudioMatheusDev/Restaurante-Python-Burguer-s
-cd demo
-```
-
-### 2. Configure o Banco de Dados
-
-Execute o script SQL localizado em `database/restaurantedb.sql`:
+### 1. Clone o repositório
 
 ```bash
-mysql -u root -p < database/restaurantedb.sql
+git clone https://github.com/seu-usuario/restaurante-java.git
+cd restaurante-java
 ```
 
-Ou importe manualmente no phpMyAdmin/MySQL Workbench.
+### 2. Configure o arquivo `application.properties`
 
-### 3. Configure as credenciais do banco
-
-Edite o arquivo `src/main/resources/application.properties` se necessário:
+Navegue até `src/main/resources/application.properties` e configure:
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/restaurantedb
-spring.datasource.username=root
-spring.datasource.password=
+# Configuração do Servidor
+server.port=8080
+
+# Configuração do Banco de Dados
+spring.datasource.url=jdbc:mysql://localhost:3306/restaurantedb?useSSL=false&serverTimezone=UTC
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA/Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# Thymeleaf
+spring.thymeleaf.cache=false
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
 ```
 
-### 4. Compile e execute o projeto
+### 3. Crie o banco de dados
+
+Execute no MySQL:
+
+```sql
+CREATE DATABASE restaurantedb CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+```
+
+### 4. Importe os dados iniciais (opcional)
+
+Importe o arquivo SQL fornecido no projeto:
 
 ```bash
-# Compilar
+mysql -u seu_usuario -p restaurantedb < database/restaurantedb.sql
+```
+
+### 5. Compile e execute o projeto
+
+```bash
+# Compilar o projeto
 mvn clean install
 
-# Executar
+# Executar a aplicação
 mvn spring-boot:run
 ```
 
-Ou use o wrapper do Maven:
+### 6. Acesse a aplicação
 
-```bash
-# Windows
-.\mvnw.cmd spring-boot:run
-
-# Linux/Mac
-./mvnw spring-boot:run
-```
-
-### 5. Acesse a aplicação
-
-Abra seu navegador e acesse: `http://localhost:8080`
-
-## 📂 Estrutura do Projeto
+Abra seu navegador e acesse:
 
 ```
-demo/
+http://localhost:8080
+```
+
+## 🗄️ Configuração do Banco de Dados
+
+### Estrutura das Tabelas
+
+#### Tabela: `cardapios`
+```sql
+CREATE TABLE cardapios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  composicao TEXT NOT NULL,
+  preco DECIMAL(10,2) NOT NULL
+);
+```
+
+#### Tabela: `clientes`
+```sql
+CREATE TABLE clientes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL UNIQUE,
+  phone VARCHAR(20)
+);
+```
+
+#### Tabela: `encomendas`
+```sql
+CREATE TABLE encomendas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  cliente_id INT NOT NULL,
+  cardapio_id INT NOT NULL,
+  quantidade INT NOT NULL DEFAULT 1,
+  observacoes TEXT,
+  status VARCHAR(50) NOT NULL DEFAULT 'Pendente',
+  data_encomenda TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE,
+  FOREIGN KEY (cardapio_id) REFERENCES cardapios(id) ON DELETE CASCADE
+);
+```
+
+#### Tabela: `contatos`
+```sql
+CREATE TABLE contatos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  phone VARCHAR(20),
+  subject VARCHAR(150) NOT NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+### Relacionamentos
+
+- **encomendas** ↔ **clientes** (N:1)
+- **encomendas** ↔ **cardapios** (N:1)
+- Cascade DELETE habilitado
+
+## 📁 Estrutura do Projeto
+
+```
+restaurante-java/
 ├── src/
 │   ├── main/
-│   │   ├── java/com/example/demo/
-│   │   │   ├── controller/
-│   │   │   │   └── HomeController.java
-│   │   │   ├── model/
-│   │   │   │   ├── Cardapio.java
-│   │   │   │   ├── Cliente.java
-│   │   │   │   ├── Conexao.java
-│   │   │   │   ├── Email.java
-│   │   │   │   ├── Encomenda.java
-│   │   │   │   └── Pessoa.java
-│   │   │   └── DemoApplication.java
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── restaurante/
+│   │   │           ├── controller/
+│   │   │           │   ├── HomeController.java
+│   │   │           │   ├── CardapioController.java
+│   │   │           │   ├── ClienteController.java
+│   │   │           │   ├── EncomendaController.java
+│   │   │           │   └── ContatoController.java
+│   │   │           ├── model/
+│   │   │           │   ├── Cardapio.java
+│   │   │           │   ├── Cliente.java
+│   │   │           │   ├── Encomenda.java
+│   │   │           │   └── Contato.java
+│   │   │           ├── repository/
+│   │   │           │   ├── CardapioRepository.java
+│   │   │           │   ├── ClienteRepository.java
+│   │   │           │   ├── EncomendaRepository.java
+│   │   │           │   └── ContatoRepository.java
+│   │   │           ├── service/
+│   │   │           │   ├── CardapioService.java
+│   │   │           │   ├── ClienteService.java
+│   │   │           │   ├── EncomendaService.java
+│   │   │           │   └── ContatoService.java
+│   │   │           └── RestauranteApplication.java
 │   │   └── resources/
-│   │       ├── application.properties
-│   │       └── templates/
-│   │           ├── Cadastrocardapio.html
-│   │           ├── cardapio.html
-│   │           ├── cliente.html
-│   │           ├── contato.html
-│   │           ├── encomenda.html
-│   │           ├── error.html
-│   │           ├── index.html
-│   │           ├── listaencomendas.html
-│   │           ├── sobre.html
-│   │           ├── sucessocardapio.html
-│   │           ├── sucessoemailenviado.html
-│   │           └── sucessoencomenda.html
+│   │       ├── static/
+│   │       │   └── css/
+│   │       │       └── style.css
+│   │       ├── templates/
+│   │       │   ├── index.html
+│   │       │   ├── cadastrocardapio.html
+│   │       │   ├── cardapio.html
+│   │       │   ├── cliente.html
+│   │       │   ├── encomenda.html
+│   │       │   ├── listaencomendas.html
+│   │       │   ├── sobre.html
+│   │       │   ├── contato.html
+│   │       │   ├── error.html
+│   │       │   ├── sucessocardapio.html
+│   │       │   ├── sucessoemailenviado.html
+│   │       │   └── sucessoencomenda.html
+│   │       └── application.properties
 │   └── test/
 ├── database/
 │   └── restaurantedb.sql
@@ -118,69 +287,112 @@ demo/
 └── README.md
 ```
 
-## 🗄️ Estrutura do Banco de Dados
+## 🖼️ Screenshots
 
-O sistema utiliza 4 tabelas principais:
+### Página Inicial
+![Home](screenshots/home.png)
 
-- **cardapios:** Armazena os itens do cardápio
-- **clientes:** Cadastro de clientes
-- **encomendas:** Registra os pedidos realizados
-- **contatos:** Mensagens de contato dos visitantes
+### Cardápio
+![Cardápio](screenshots/cardapio.png)
 
-## 🌐 Rotas Disponíveis
+### Lista de Pedidos
+![Pedidos](screenshots/pedidos.png)
 
-| Rota | Método | Descrição |
-|------|--------|-----------|
-| `/` | GET | Página inicial |
-| `/cardapio` | GET | Lista o cardápio |
-| `/Cadastrocardapio` | GET | Formulário de cadastro de lanche |
-| `/card` | POST | Processa cadastro de lanche |
-| `/cliente` | GET | Formulário de cadastro de cliente |
-| `/client` | POST | Processa cadastro de cliente |
-| `/Encomenda` | GET | Formulário de encomenda |
-| `/enco` | POST | Processa encomenda |
-| `/encomendas` | GET | Lista todas as encomendas |
-| `/contato` | GET | Formulário de contato |
-| `/contact` | POST | Processa contato |
-| `/sobre` | GET | Página sobre o restaurante |
+### Formulário de Contato
+![Contato](screenshots/contato.png)
 
-## 🎨 Interface
+## 🔗 API Endpoints
 
-O sistema utiliza Bootstrap 5 para uma interface moderna e responsiva, com:
+### Páginas Públicas
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/` | Página inicial |
+| GET | `/cardapio` | Listar cardápio |
+| GET | `/sobre` | Página sobre |
+| GET | `/contato` | Formulário de contato |
 
-- Menu de navegação consistente em todas as páginas
-- Cards para exibição de informações
-- Formulários estilizados
-- Tabelas responsivas
-- Badges para status de encomendas
+### Cardápio
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/Cadastrocardapio` | Formulário de cadastro |
+| POST | `/card` | Salvar prato |
 
-## 📝 Melhorias Implementadas
+### Clientes
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/cliente` | Formulário de cadastro |
+| POST | `/client` | Salvar cliente |
 
-- ✅ Correção da estrutura de pacotes (Model → model)
-- ✅ Adição de construtor vazio nas classes modelo
-- ✅ Implementação completa do sistema de encomendas
-- ✅ Criação de métodos de busca (buscarTodos, buscarPorId)
-- ✅ Normalização de todos os templates HTML
-- ✅ Configuração adequada do application.properties
-- ✅ Atualização do banco de dados com tabelas faltantes
-- ✅ Página de erro personalizada
-- ✅ Links de navegação funcionais
+### Pedidos
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/Encomenda` | Formulário de pedido |
+| POST | `/enco` | Salvar pedido |
+| GET | `/encomendas` | Listar pedidos |
 
-## 🔧 Possíveis Melhorias Futuras
+### Contato
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/contato` | Formulário |
+| POST | `/contact` | Enviar mensagem |
 
-- [ ] Implementar JPA/Hibernate em vez de JDBC puro
-- [ ] Adicionar autenticação e autorização
-- [ ] Implementar carrinho de compras
-- [ ] Adicionar upload de imagens para os lanches
-- [ ] Sistema de avaliações
-- [ ] Painel administrativo
-- [ ] API REST para integração mobile
-- [ ] Sistema de pagamento
+## 🎨 Design System
 
-## 📄 Licença
+### Paleta de Cores
+```css
+--java-orange: #ff6b35;      /* Cor principal */
+--java-dark: #2c3e50;         /* Cor escura */
+--java-light: #f8f9fa;        /* Cor clara */
+--java-hover: #ff8555;        /* Hover */
+```
 
-Este projeto é de código aberto para fins educacionais.
+### Componentes
+- **Cards**: `.card-java`
+- **Botões**: `.btn-java`, `.btn-outline-java`
+- **Navbar**: `.navbar-java`
+- **Footer**: `.footer-java`
+- **Badges**: `.badge-price`
+- **Animações**: `.fade-in-up`
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Para contribuir:
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
+4. Push para a branch (`git push origin feature/MinhaFeature`)
+5. Abra um Pull Request
+
+### Diretrizes
+- Siga as convenções de código Java
+- Mantenha o padrão de design estabelecido
+- Adicione testes quando aplicável
+- Documente novas funcionalidades
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autores
+
+- **Seu Nome** - [GitHub](https://github.com/seu-usuario)
+
+## 📞 Contato
+
+- **Email**: contato@restaurantejava.com.br
+- **Telefone**: (11) 9999-9999
+- **Instagram**: [@restaurantejava](https://instagram.com/restaurantejava)
+
+## 🙏 Agradecimentos
+
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [Thymeleaf](https://www.thymeleaf.org/)
 
 ---
 
-**Python Burguer's** - O sabor do código em cada mordida! 🍔💻
+⭐ Se este projeto foi útil para você, considere dar uma estrela!
+
+**Desenvolvido com ☕ e 💻 por RestauranteJAVA Team**
