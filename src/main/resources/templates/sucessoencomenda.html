@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sucesso - Pedido Realizado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-java sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-coffee"></i> RestauranteJAVA
+            </a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo de Sucesso -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 fade-in-up">
+                <div class="card card-java">
+                    <div class="card-body text-center p-5">
+                        <div class="mb-4">
+                            <i class="fas fa-check-circle" style="font-size: 6rem; color: #28a745;"></i>
+                        </div>
+                        
+                        <h1 class="h2 fw-bold mb-3" style="color: #28a745;">
+                            ✅ Pedido Realizado com Sucesso!
+                        </h1>
+                        
+                        <p class="lead text-muted mb-4">
+                            Seu pedido foi registrado e está sendo processado
+                        </p>
+
+                        <div class="alert alert-success d-flex align-items-center mb-4" role="alert">
+                            <i class="fas fa-info-circle me-2" style="font-size: 1.5rem;"></i>
+                            <div class="text-start w-100">
+                                <p class="mb-0" th:text="${message}">Sua encomenda foi registrada com sucesso!</p>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="/Encomenda" class="btn btn-java btn-lg">
+                                <i class="fas fa-plus-circle"></i> Novo Pedido
+                            </a>
+                            <a href="/encomendas" class="btn btn-outline-java btn-lg">
+                                <i class="fas fa-clipboard-list"></i> Meus Pedidos
+                            </a>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <a href="/" class="btn btn-link text-decoration-none" style="color: var(--java-orange);">
+                                <i class="fas fa-home"></i> Voltar à Página Inicial
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status do Pedido -->
+                <div class="row g-3 mt-4">
+                    <div class="col-md-4">
+                        <div class="card card-java h-100">
+                            <div class="card-body text-center p-3">
+                                <i class="fas fa-clock mb-2" style="font-size: 2rem; color: #ffc107;"></i>
+                                <p class="mb-1 small"><strong>Status Atual</strong></p>
+                                <span class="badge" style="background-color: #ffc107; color: #000;">
+                                    <i class="fas fa-hourglass-half"></i> Pendente
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-java h-100">
+                            <div class="card-body text-center p-3">
+                                <i class="fas fa-fire mb-2" style="font-size: 2rem; color: var(--java-orange);"></i>
+                                <p class="mb-1 small"><strong>Próximo</strong></p>
+                                <span class="badge" style="background-color: #17a2b8;">
+                                    <i class="fas fa-utensils"></i> Em Preparo
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-java h-100">
+                            <div class="card-body text-center p-3">
+                                <i class="fas fa-shipping-fast mb-2" style="font-size: 2rem; color: #28a745;"></i>
+                                <p class="mb-1 small"><strong>Tempo Estimado</strong></p>
+                                <span class="badge" style="background-color: #28a745;">
+                                    <i class="fas fa-clock"></i> 30-45 min
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="card card-java mt-4">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-lightbulb mb-3" style="font-size: 2.5rem; color: var(--java-orange);"></i>
+                        <h3 class="h5 fw-bold mb-2">Acompanhe seu Pedido</h3>
+                        <p class="text-muted mb-3">
+                            Você pode verificar o status do seu pedido a qualquer momento em <strong>Meus Pedidos</strong>
+                        </p>
+                        <a href="/encomendas" class="btn btn-outline-java">
+                            <i class="fas fa-eye"></i> Acompanhar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Próximas Ações -->
+                <div class="card card-java mt-4">
+                    <div class="card-body p-4">
+                        <h3 class="h5 fw-bold mb-3 text-center">
+                            <i class="fas fa-star me-2" style="color: var(--java-orange);"></i>
+                            Enquanto Aguarda...
+                        </h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-utensils me-2 mt-1" style="color: var(--java-orange); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <strong class="small">Adicione mais itens</strong>
+                                        <p class="text-muted mb-0 small">Veja nosso cardápio completo</p>
+                                        <a href="/cardapio" class="small text-decoration-none" style="color: var(--java-orange);">Ver cardápio →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-history me-2 mt-1" style="color: var(--java-orange); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <strong class="small">Histórico de pedidos</strong>
+                                        <p class="text-muted mb-0 small">Veja seus pedidos anteriores</p>
+                                        <a href="/encomendas" class="small text-decoration-none" style="color: var(--java-orange);">Ver histórico →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-java">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
+                    <p class="mb-0">
+                        <i class="fas fa-coffee"></i> &copy; 2025 RestauranteJAVA - Todos os direitos reservados
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end text-center">
+                    <a href="/sobre" class="me-3"><i class="fas fa-info-circle"></i> Sobre</a>
+                    <a href="/contato" class="me-3"><i class="fas fa-envelope"></i> Contato</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

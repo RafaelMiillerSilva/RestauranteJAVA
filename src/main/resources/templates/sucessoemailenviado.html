@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sucesso - Mensagem Enviada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-java sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-coffee"></i> RestauranteJAVA
+            </a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo de Sucesso -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 fade-in-up">
+                <div class="card card-java">
+                    <div class="card-body text-center p-5">
+                        <div class="mb-4">
+                            <i class="fas fa-paper-plane" style="font-size: 6rem; color: #28a745;"></i>
+                        </div>
+                        
+                        <h1 class="h2 fw-bold mb-3" style="color: #28a745;">
+                            E-mail Enviado com Sucesso!
+                        </h1>
+                        
+                        <p class="lead text-muted mb-2">
+                            Recebemos sua mensagem,
+                        </p>
+                        
+                        <p class="h4 mb-4" style="color: var(--java-orange);">
+                            <strong th:text="${name}">Nome do Cliente</strong>
+                        </p>
+
+                        <div class="alert alert-success d-flex align-items-center mb-4" role="alert">
+                            <i class="fas fa-info-circle me-2" style="font-size: 1.5rem;"></i>
+                            <div class="text-start w-100">
+                                <p class="mb-0" th:text="${message}">Seu e-mail foi enviado com sucesso!</p>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="/" class="btn btn-java btn-lg">
+                                <i class="fas fa-home"></i> Voltar ao Início
+                            </a>
+                            <a href="/cardapio" class="btn btn-outline-java btn-lg">
+                                <i class="fas fa-utensils"></i> Ver Cardápio
+                            </a>
+                            <a href="/contato" class="btn btn-outline-java btn-lg">
+                                <i class="fas fa-envelope"></i> Novo Contato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="card card-java mt-4">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-clock mb-3" style="font-size: 2.5rem; color: var(--java-orange);"></i>
+                        <h3 class="h5 fw-bold mb-2">Tempo de Resposta</h3>
+                        <p class="text-muted mb-3">
+                            Nossa equipe entrará em contato em até <strong>24 horas</strong>!
+                        </p>
+                        <div class="d-flex gap-2 justify-content-center flex-wrap">
+                            <span class="badge badge-price" style="font-size: 0.9rem;">
+                                <i class="fas fa-phone"></i> (11) 9999-9999
+                            </span>
+                            <span class="badge badge-price" style="font-size: 0.9rem;">
+                                <i class="fas fa-envelope"></i> contato@restaurantejava.com.br
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Rápido -->
+                <div class="card card-java mt-4">
+                    <div class="card-body p-4">
+                        <h3 class="h5 fw-bold mb-3 text-center">
+                            <i class="fas fa-question-circle me-2" style="color: var(--java-orange);"></i>
+                            Enquanto Aguarda...
+                        </h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-utensils me-2 mt-1" style="color: var(--java-orange);"></i>
+                                    <div>
+                                        <strong class="small">Conheça nosso cardápio</strong>
+                                        <p class="text-muted mb-0 small">Pratos deliciosos esperando por você</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-info-circle me-2 mt-1" style="color: var(--java-orange);"></i>
+                                    <div>
+                                        <strong class="small">Saiba mais sobre nós</strong>
+                                        <p class="text-muted mb-0 small">Nossa história e valores</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-java">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
+                    <p class="mb-0">
+                        <i class="fas fa-coffee"></i> &copy; 2025 RestauranteJAVA - Todos os direitos reservados
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end text-center">
+                    <a href="/sobre" class="me-3"><i class="fas fa-info-circle"></i> Sobre</a>
+                    <a href="/contato" class="me-3"><i class="fas fa-envelope"></i> Contato</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
